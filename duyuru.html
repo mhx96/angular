@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <!-- IE Compatibility Meta -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- First Mobile Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Design With Bootstrap [1] Home</title>
+    <link rel='stylesheet' href='css/bootstrap.css' />
+    <link rel='stylesheet' href='css/font-awesome.min.css' />
+    <link rel='stylesheet' href='css/style.css' />
+    <link rel='stylesheet' href='css/default_theme.css' />
+    <link rel='stylesheet' href='css/hover.css' />
+    <link rel='stylesheet' href='css/animate.css' />
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700'>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Angular library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="anguler/controller/home.js"></script>
+</head>
+
+<body ng-app="Home" ng-controller="HomeCtrl">
+    <!-- Start Our Navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#ournavbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+                <a class="navbar-brand wobble-horizontal " href="index.html">Suriye <span>duyuru</span></a>
+            </div>
+            <div class="collapse navbar-collapse" id="ournavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="haber.html">Haberler</a></li>
+                    <li class="active"><a href="duyuru.html">Duyurular</a></li>
+                    <li><a href="yorum.html">Yorumlar</a></li>
+                    <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                    <span class="uye-btn" ng-if="zyaretci">
+                            <a href="uye.html" class="btn btn-primary" >
+                                <i class="fa fa-pencil-square-o"></i> Üye Ol
+                            </a>
+                            <a href="giris.html" class="btn btn-success ">
+                                    <i class="fa fa-sign-in"></i> Giriş  
+                            </a>
+                            </span>
+                    <span class="uye-btn" ng-if="kullanci">
+                            <a class="btn btn-md btn-danger"  ng-click="cikisYap()" name="logout">
+                                    <i class="fa fa-sign-out"></i> Çıkış Yap
+                              </a>
+                     </span>
+                </ul>
+            </div>
+        </div>
+        <!-- End Of The Container -->
+    </nav>
+    <!-- End Our Navbar -->
+    <marquee class="new-post">
+        <font size="6"> Esad Rejimi – Hizbullah, Rusya, İran ve Şii Milisler $ Muhalifler – Ahrar uş-Şam, Şam’ın Fethi Cephesi, ÖSO vb.</font>
+        <font size="6">$ Muhalifler – Ahrar uş-Şam, Şam’ın Fethi Cephesi, ÖSO vb. </font>
+        <font size="6"> $ IŞİD – Örgüte biat eden yerel milis güçler ve aşiretler </font>
+        <font size="6"> $ Rusya Dişleri Bakanı Lavrov, “Rusya Suriye’ye müdahil olduğunda, Şam 2 ya da 3 haftada düşecek durumdaydı” dedi.</font>
+        <font size="6"> $ Eski CIA direktörü David Petraeus, PYD için “ABD’nin terör örgütü olarak kabul ettiği PKK’nın kuzeni” dedi.
+        </font>
+        <font size="6">$ Barzani, PYD’nin Suriye’ye almadığı peşmergeler için, “Suriye peşmergelerinin kendi bölgelerine dönmesini destekleyeceğiz” dedi.</font>
+        <font size="6">$ Muhalifler Suriye’nin güneyinde Dera’da rejime karşı ilerlerken, IŞİD’de muhaliflere saldırısı sonucu bazı bölgeleri ele geçirdi.</font>
+    </marquee>
+    <div class="container">
+        <a class="pull-right" href="#ekleModel">
+            <button class="btn btn-md btn-success" name="duyuruekle">Yeni duyuru Ekle</button>
+
+        </a>
+
+        <div class="panel-body">
+            <div class="new-post" ng-repeat="duyuru in duyurular">
+                <div class="post-image">
+                    <img class="img-thumbnail" src='images/03.jpg'>
+                </div>
+                <div class="post-content" style="text-align: center">
+                    <div class="post-title">
+                        <h3 title="duyuru başligi">{{duyuru.baslik}} </h3>
+                    </div>
+                    <p>
+                        {{duyuru.icerik}} Suriye ya da resmî adıyla Suriye Arap Cumhuriyeti, Ortadoğu'da Lübnan, İsrail, Ürdün,
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Start Ultimate Footer Section -->
+    <section class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <h3>Sitemap</h3>
+                    <ul class="list-unstyled three-columns">
+                        <li><a href="Home.html"> Home</a></li>
+                        <li><a href="About.html"> About</a></li>
+                        <li><a href="Company.html"> Company</a></li>
+                        <li><a href="Code.html"> Code</a></li>
+                        <li><a href="Design.html">  Design</a></li>
+                        <li><a href="Host.html"> Host</a></li>
+                        <li><a href="Solutions.html"> Solutions</a></li>
+                        <li><a href="Sitemap.html"> Sitemap</a></li>
+                        <li><a href="Contact.html"> Contact</a></li>
+                    </ul>
+                    <ul class="list-unstyled social-list">
+                        <li>
+                            <a href="http://facebook.com">
+                                <img src="images/social-bookmarks/facebook.png" width="48" height="48" alt="Facebook" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://Plus.google.com">
+                                <img src="images/social-bookmarks/gplus.png" width="48" height="48" alt="Google Plus" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://Twitter.com">
+                                <img src="images/social-bookmarks/twitter.png" width="48" height="48" alt="Twitter" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://Pinterest.com">
+                                <img src="images/social-bookmarks/pinterest.png" width="48" height="48" alt="Pinterest" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://rss.com">
+                                <img src="images/social-bookmarks/rss.png" width="48" height="48" alt="Rss" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://mail.google.com">
+                                <img src="images/social-bookmarks/email.png" width="48" height="48" alt="Email" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h3>Suriye hakkında</h3>
+                    <div class="media">
+                        <a class="pull-left" href="#">
+                            <img class="media-object" src="images/25.jpg" width="64" height="64" alt="Image 01" />
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading">
+                                Suriye
+                            </h4>
+                            Suriye ya da resmî adıyla Suriye Arap Cumhuriyeti, Ortadoğu'da Lübnan, İsrail, Ürdün, Irak ve Türkiye ile komşu bir ülkedir. Akdeniz'e kıyısı vardır. Başkenti ve en büyük şehri Şam'dır.
+                        </div>
+                    </div>
+                    <div class="media">
+                        <a class="pull-left" href="#">
+                        </a>
+                        <div class="media-body">
+                            Başkent: Şam Alan: 185.180 km² Nüfus: 18,5 milyon (2015) Dünya Bankası Para birimi: Suriye lirası Başbakan: İmad Kamış Resmi dili: Arapça
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <h3>Günün Resimleri</h3>
+                    <img class="img-thumbnail" src="images/20.jpg" width="150" height="100" alt="Image 01" />
+                    <img class="img-thumbnail" src="images/21.jpg" width="150" height="100" alt="Image 02" />
+                    <img class="img-thumbnail" src="images/22.jpg" width="150" height="100" alt="Image 03" />
+                    <img class="img-thumbnail" src="images/23.jpg" width="150" height="100" alt="Image 04" />
+                </div>
+            </div>
+        </div>
+        <div class="copyright text-center">
+            Copyright &copy; 2017 <span>Suriye Haberleri</span> .Inc
+        </div>
+    </section>
+    <!-- End Ultimate Footer Section -->
+
+    <!-- Start Scroll To Top -->
+    <div id="scroll-top">
+        <i class="fa fa-chevron-up fa-3x"></i>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="createModel" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Add New duyuru</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Title:</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" ng-model="newduyuru.title">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Description:</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" ng-model="newduyuru.description">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Date:</label>
+                            <div class="col-sm-10">
+                                <input type="date" class="form-control" ng-model="newduyuru.date">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-default" ng-click="saveduyuru()" data-dismiss="modal">Save</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- End Scroll To Top -->
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <script src="js/jquery.nicescroll.min.js"></script>
+</body>
+
+</html>
